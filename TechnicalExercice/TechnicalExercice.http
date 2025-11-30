@@ -1,0 +1,47 @@
+@TechnicalExercice_HostAddress = http://localhost:5183
+
+GET {{TechnicalExercice_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+### Get All Clients
+GET {{TechnicalExercice_HostAddress}}/client/
+Accept: application/json
+
+###
+
+### Create Individual Client
+POST {{TechnicalExercice_HostAddress}}/client/create/
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "companyName": "",
+    "revenue": 100000
+}
+
+###
+### Add Product to Shopping Basket
+POST {{TechnicalExercice_HostAddress}}/client/add-product/
+Content-Type: application/json
+
+{
+    "clientId": "990dc9d2-a534-406f-a8dc-dce208f910e0",
+    "basketId": null,
+    "quantity": 3,
+    "productName": "Laptop",
+    "typeProduct": 2
+}
+
+###
+
+### Calculate Total to Pay
+GET {{TechnicalExercice_HostAddress}}/client/990dc9d2-a534-406f-a8dc-dce208f910e0/05db7bdb-07ab-4bee-a38d-f0e8f2c73d30/total-to-pay
+Content-Type: application/json
+
+# {
+#     "clientId": "b6d2cacc-f71a-4128-9a24-ab5c267750b7",
+#     "basketId": "57e9f646-f5b4-4078-93d7-6b26cf5fde73"
+# }
