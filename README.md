@@ -46,11 +46,6 @@
 - **Scoped services**: Services that depend on scoped resources (DbContext) are registered as scoped (`AddScoped<>`) and must be resolved per-request — handlers use parameter injection to avoid resolving scoped services from the root provider.
 
 
-**Testing & Debugging Tips**
-- When an integration test returns HTTP 500, inspect the response body before calling `EnsureSuccessStatusCode()` and run the host in `Development` to get the DeveloperExceptionPage in the test host (use `WithWebHostBuilder(builder => builder.UseEnvironment("Development"))`).
-- To see the request body or server exception during tests, temporarily add a logging middleware early in the pipeline (only for debugging) to print request bodies and exceptions.
-
-
 **Useful commands**
 - Restore & build: `dotnet restore && dotnet build`
 - Run API: `dotnet run --project TechnicalExercice`
